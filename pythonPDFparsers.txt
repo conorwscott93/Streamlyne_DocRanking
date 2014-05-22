@@ -1,0 +1,34 @@
+PDF Parsers
+-----------
+
+pyPdf - http://pybrary.net/pyPdf/
+xpdf - http://www.foolabs.com/xpdf/ 
+pdfbox - http://www.pdfbox.org/
+mupdf - http://mupdf.com/
+PDFMiner - http://www.unixuser.org/~euske/python/pdfminer/
+
+__________________________________________________________
+
+PDFMiner can automatically obtain the table of contents. Therefore a good start for acquiring keywords.
+
+
+
+Accessing Table of Contents:
+____________________________________________
+from pdfminer.pdfparser import PDFParser
+from pdfminer.pdfdocument import PDFDocument
+
+# Open a PDF document.
+fp = open('mypdf.pdf', 'rb')
+parser = PDFParser(fp)
+document = PDFDocument(parser, password)
+
+# Get the outlines of the document.
+outlines = document.get_outlines()
+for (level,title,dest,a,se) in outlines:
+    print (level, title)
+____________________________________________
+
+Authors note:
+
+You can extend PDFPageInterpreter and PDFDevice class in order to process them differently / obtain other information.
