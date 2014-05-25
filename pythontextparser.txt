@@ -1,0 +1,3 @@
+pyFinder
+
+https://pypi.python.org/pypi/pyfinder/0.2
